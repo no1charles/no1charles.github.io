@@ -1,0 +1,351 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docsy – Update Docsy</title><link>http://localhost:1313/docs/updating/</link><description>Recent content in Update Docsy on Docsy</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="http://localhost:1313/docs/updating/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Update your Docsy Hugo Module</title><link>http://localhost:1313/docs/updating/updating-hugo-module/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/updating/updating-hugo-module/</guid><description>
+&lt;p>When using the Docsy theme as a Hugo Module, updating your theme is really easy.&lt;/p>
+&lt;p>At the command prompt, change to the root directory of your existing site.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> /path/to/my-existing-site
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then invoke hugo&amp;rsquo;s module &lt;code>get&lt;/code> subcommand with the update flag:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo mod get -u github.com/google/docsy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hugo automatically pulls in the latest theme version. That&amp;rsquo;s it, your update is
+done!&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+&lt;p>If you want to set your module to a certain version inside the Docsy theme repo,
+simply specify the name of the tag representing this version when updating your
+theme, for example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo mod get -u github.com/google/docsy@v0.9.1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Instead of a version tag, you can also specify a commit hash, for example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo mod get -u github.com/google/docsy@6c8a3afe
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div></description></item><item><title>Docs: Update Docsy without Hugo Modules</title><link>http://localhost:1313/docs/updating/updating-submodules/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/updating/updating-submodules/</guid><description>
+&lt;p>If you aren&amp;rsquo;t using Hugo Modules, depending on how you chose to install Docsy on your existing site, use one of the following two procedures to update your theme.&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+If you intend to update your site, consider &lt;a href="http://localhost:1313/docs/updating/convert-site-to-module/">converting your site to Hugo Modules&lt;/a>. After conversion, it&amp;rsquo;s even simpler to update Docsy!
+&lt;/div>
+&lt;h2 id="update-your-docsy-submodule">Update your Docsy submodule&lt;a class="td-heading-self-link" href="#update-your-docsy-submodule" aria-label="Heading self-link">&lt;/a>&lt;/h2>
+&lt;p>If you are using the &lt;a href="http://localhost:1313/docs/get-started/other-options/#option-1-docsy-as-a-git-submodule">Docsy theme as a submodule&lt;/a> in your project, here&amp;rsquo;s how you update the submodule:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Navigate to the root of your local project, then run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git submodule update --remote
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add and then commit the change to your project:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git add themes/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git commit -m &lt;span class="s2">&amp;#34;Updating theme submodule&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Push the commit to your project repo. For example, run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git push origin master
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h2 id="route-2-update-your-docsy-clone">Route 2: Update your Docsy clone&lt;a class="td-heading-self-link" href="#route-2-update-your-docsy-clone" aria-label="Heading self-link">&lt;/a>&lt;/h2>
+&lt;p>If you &lt;a href="http://localhost:1313/docs/get-started/other-options/#option-2-clone-the-docsy-theme">cloned the Docsy theme&lt;/a> into
+the &lt;code>themes&lt;/code> folder in your project, then you use the &lt;code>git pull&lt;/code> command:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Navigate to the &lt;code>themes&lt;/code> directory in your local project:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> themes
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Ensure that &lt;code>origin&lt;/code> is set to &lt;code>https://github.com/google/docsy.git&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git remote -v
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Update your local clone:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git pull origin master
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>If you have made any local changes to the cloned theme, &lt;strong>you must manually resolve any merge conflicts&lt;/strong>.&lt;/p></description></item><item><title>Docs: Migrate to Hugo Modules</title><link>http://localhost:1313/docs/updating/convert-site-to-module/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/updating/convert-site-to-module/</guid><description>
+&lt;h2 id="tldr-conversion-for-the-impatient-expert">TL;DR: Conversion for the impatient expert&lt;a class="td-heading-self-link" href="#tldr-conversion-for-the-impatient-expert" aria-label="Heading self-link">&lt;/a>&lt;/h2>
+&lt;p>Run the following from the command line:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;button class="nav-link disabled"
+id="tabs-00-00-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-00" role="tab"
+aria-controls="tabs-00-00" aria-selected="false">
+CLI:
+&lt;/button>
+&lt;/li>&lt;li class="nav-item">
+&lt;button class="nav-link active"
+id="tabs-00-01-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-01" role="tab"
+data-td-tp-persist="bash" aria-controls="tabs-00-01" aria-selected="true">
+Unix shell
+&lt;/button>
+&lt;/li>&lt;li class="nav-item">
+&lt;button class="nav-link"
+id="tabs-00-02-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-02" role="tab"
+data-td-tp-persist="batchfile" aria-controls="tabs-00-02" aria-selected="false">
+Windows command line
+&lt;/button>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-0-content">
+&lt;div class="tab-pane fade"
+id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab" tabindex="0">
+&lt;pre tabindex="0">&lt;code>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;div class="tab-pane fade show active"
+id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab" tabindex="0">
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> /path/to/my-existing-site
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo mod init github.com/me-at-github/my-existing-site
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo mod get github.com/google/docsy@v0.9.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sed -i &lt;span class="s1">&amp;#39;/theme = \[&amp;#34;docsy&amp;#34;\]/d&amp;#39;&lt;/span> config.toml
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mv config.toml hugo.toml
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cat &amp;gt;&amp;gt; hugo.toml &lt;span class="s">&amp;lt;&amp;lt;EOL
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">[module]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">proxy = &amp;#34;direct&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">[[module.imports]]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">path = &amp;#34;github.com/google/docsy&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">EOL&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo server&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-00-02" role="tabpanel" aria-labelled-by="tabs-00-02-tab" tabindex="0">
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Batchfile" data-lang="Batchfile">&lt;span class="line">&lt;span class="cl">&lt;span class="k">cd&lt;/span> my-existing-site
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo mod init github.com/me-at-github/my-existing-site
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo mod get github.com/google/docsy@v0.9.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">findstr /v /c:&lt;span class="s2">&amp;#34;theme = [\&amp;#34;&lt;/span>docsy\&lt;span class="s2">&amp;#34;]&amp;#34;&lt;/span> config.toml &lt;span class="p">&amp;gt;&lt;/span> hugo.toml
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">(&lt;/span>&lt;span class="k">echo&lt;/span> [module]&lt;span class="se">^
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>proxy = &lt;span class="s2">&amp;#34;direct&amp;#34;&lt;/span>&lt;span class="se">^
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>[[module.imports]]&lt;span class="se">^
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>path = &lt;span class="s2">&amp;#34;github.com/google/docsy&amp;#34;&lt;/span>&lt;span class="p">)&amp;gt;&amp;gt;&lt;/span>hugo.toml
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo server&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="detailed-conversion-instructions">Detailed conversion instructions&lt;a class="td-heading-self-link" href="#detailed-conversion-instructions" aria-label="Heading self-link">&lt;/a>&lt;/h2>
+&lt;h3 id="import-the-docsy-theme-module-as-a-dependency-of-your-site">Import the Docsy theme module as a dependency of your site&lt;a class="td-heading-self-link" href="#import-the-docsy-theme-module-as-a-dependency-of-your-site" aria-label="Heading self-link">&lt;/a>&lt;/h3>
+&lt;p>At the command prompt, change to the root directory of your existing site.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> /path/to/my-existing-site
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Only sites that are Hugo Modules themselves can import other Hugo Modules. Turn your existing site into a Hugo Module by running the following command from your site directory, replacing &lt;code>github.com/me/my-existing-site&lt;/code> with your site repository:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo mod init github.com/me/my-existing-site
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates two new files, &lt;code>go.mod&lt;/code> for the module definitions and &lt;code>go.sum&lt;/code> which holds the checksums for module verification.&lt;/p>
+&lt;p>Next declare the Docsy theme module as a dependency for your site.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo mod get github.com/google/docsy@v0.9.1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command adds the &lt;code>docsy&lt;/code> theme module to your definition file &lt;code>go.mod&lt;/code>.&lt;/p>
+&lt;h3 id="update-your-config-file">Update your config file&lt;a class="td-heading-self-link" href="#update-your-config-file" aria-label="Heading self-link">&lt;/a>&lt;/h3>
+&lt;p>In your &lt;code>hugo.toml&lt;/code>/&lt;code>hugo.yaml&lt;/code>/&lt;code>hugo.json&lt;/code> file, update the theme setting to use Hugo Modules. Find the following line:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-2" role="tablist">
+&lt;li class="nav-item">
+&lt;button class="nav-link disabled"
+id="tabs-02-00-tab" data-bs-toggle="tab" data-bs-target="#tabs-02-00" role="tab"
+aria-controls="tabs-02-00" aria-selected="false">
+Configuration file:
+&lt;/button>
+&lt;/li>&lt;li class="nav-item">
+&lt;button class="nav-link active"
+id="tabs-02-01-tab" data-bs-toggle="tab" data-bs-target="#tabs-02-01" role="tab"
+data-td-tp-persist="toml" aria-controls="tabs-02-01" aria-selected="true">
+hugo.toml
+&lt;/button>
+&lt;/li>&lt;li class="nav-item">
+&lt;button class="nav-link"
+id="tabs-02-02-tab" data-bs-toggle="tab" data-bs-target="#tabs-02-02" role="tab"
+data-td-tp-persist="yaml" aria-controls="tabs-02-02" aria-selected="false">
+config.yaml
+&lt;/button>
+&lt;/li>&lt;li class="nav-item">
+&lt;button class="nav-link"
+id="tabs-02-03-tab" data-bs-toggle="tab" data-bs-target="#tabs-02-03" role="tab"
+data-td-tp-persist="json" aria-controls="tabs-02-03" aria-selected="false">
+config.json
+&lt;/button>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-2-content">
+&lt;div class="tab-pane fade"
+id="tabs-02-00" role="tabpanel" aria-labelled-by="tabs-02-00-tab" tabindex="2">
+&lt;pre tabindex="0">&lt;code>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;div class="tab-pane fade show active"
+id="tabs-02-01" role="tabpanel" aria-labelled-by="tabs-02-01-tab" tabindex="2">
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-toml" data-lang="toml">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">theme&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;docsy&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-02-02" role="tabpanel" aria-labelled-by="tabs-02-02-tab" tabindex="2">
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">theme&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">docsy&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-02-03" role="tabpanel" aria-labelled-by="tabs-02-03-tab" tabindex="2">
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="s2">&amp;#34;theme&amp;#34;&lt;/span>&lt;span class="err">:&lt;/span> &lt;span class="s2">&amp;#34;docsy&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>Change this line to:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-3" role="tablist">
+&lt;li class="nav-item">
+&lt;button class="nav-link disabled"
+id="tabs-03-00-tab" data-bs-toggle="tab" data-bs-target="#tabs-03-00" role="tab"
+aria-controls="tabs-03-00" aria-selected="false">
+Configuration file:
+&lt;/button>
+&lt;/li>&lt;li class="nav-item">
+&lt;button class="nav-link active"
+id="tabs-03-01-tab" data-bs-toggle="tab" data-bs-target="#tabs-03-01" role="tab"
+data-td-tp-persist="toml" aria-controls="tabs-03-01" aria-selected="true">
+hugo.toml
+&lt;/button>
+&lt;/li>&lt;li class="nav-item">
+&lt;button class="nav-link"
+id="tabs-03-02-tab" data-bs-toggle="tab" data-bs-target="#tabs-03-02" role="tab"
+data-td-tp-persist="yaml" aria-controls="tabs-03-02" aria-selected="false">
+config.yaml
+&lt;/button>
+&lt;/li>&lt;li class="nav-item">
+&lt;button class="nav-link"
+id="tabs-03-03-tab" data-bs-toggle="tab" data-bs-target="#tabs-03-03" role="tab"
+data-td-tp-persist="json" aria-controls="tabs-03-03" aria-selected="false">
+hugo.json
+&lt;/button>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-3-content">
+&lt;div class="tab-pane fade"
+id="tabs-03-00" role="tabpanel" aria-labelled-by="tabs-03-00-tab" tabindex="3">
+&lt;pre tabindex="0">&lt;code>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;div class="tab-pane fade show active"
+id="tabs-03-01" role="tabpanel" aria-labelled-by="tabs-03-01-tab" tabindex="3">
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-toml" data-lang="toml">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">theme&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;github.com/google/docsy&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-03-02" role="tabpanel" aria-labelled-by="tabs-03-02-tab" tabindex="3">
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">theme&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">github.com/google/docsy&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-03-03" role="tabpanel" aria-labelled-by="tabs-03-03-tab" tabindex="3">
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="s2">&amp;#34;theme&amp;#34;&lt;/span>&lt;span class="err">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;github.com/google/docsy&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">]&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>Alternatively, you can omit this line altogether and replace it with the settings given in the following snippet:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-4" role="tablist">
+&lt;li class="nav-item">
+&lt;button class="nav-link disabled"
+id="tabs-04-00-tab" data-bs-toggle="tab" data-bs-target="#tabs-04-00" role="tab"
+aria-controls="tabs-04-00" aria-selected="false">
+Configuration file:
+&lt;/button>
+&lt;/li>&lt;li class="nav-item">
+&lt;button class="nav-link active"
+id="tabs-04-01-tab" data-bs-toggle="tab" data-bs-target="#tabs-04-01" role="tab"
+data-td-tp-persist="toml" aria-controls="tabs-04-01" aria-selected="true">
+hugo.toml
+&lt;/button>
+&lt;/li>&lt;li class="nav-item">
+&lt;button class="nav-link"
+id="tabs-04-02-tab" data-bs-toggle="tab" data-bs-target="#tabs-04-02" role="tab"
+data-td-tp-persist="yaml" aria-controls="tabs-04-02" aria-selected="false">
+hugo.yaml
+&lt;/button>
+&lt;/li>&lt;li class="nav-item">
+&lt;button class="nav-link"
+id="tabs-04-03-tab" data-bs-toggle="tab" data-bs-target="#tabs-04-03" role="tab"
+data-td-tp-persist="json" aria-controls="tabs-04-03" aria-selected="false">
+hugo.json
+&lt;/button>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-4-content">
+&lt;div class="tab-pane fade"
+id="tabs-04-00" role="tabpanel" aria-labelled-by="tabs-04-00-tab" tabindex="4">
+&lt;pre tabindex="0">&lt;code>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;div class="tab-pane fade show active"
+id="tabs-04-01" role="tabpanel" aria-labelled-by="tabs-04-01-tab" tabindex="4">
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-toml" data-lang="toml">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="nx">module&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">proxy&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;direct&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c"># uncomment line below for temporary local development of module&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c"># replacements = &amp;#34;github.com/google/docsy -&amp;gt; ../../docsy&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="nx">module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">hugoVersion&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">extended&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="kc">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">min&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;0.73.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[[&lt;/span>&lt;span class="nx">module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">imports&lt;/span>&lt;span class="p">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">path&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;github.com/google/docsy&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">disable&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-04-02" role="tabpanel" aria-labelled-by="tabs-04-02-tab" tabindex="4">
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">module&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">proxy&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">direct&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">hugoVersion&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">extended&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">min&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">0.73.0&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">imports&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">path&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">github.com/google/docsy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">disable&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">false&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">path&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">github.com/google/docsy/dependencies&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">disable&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">false&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-04-03" role="tabpanel" aria-labelled-by="tabs-04-03-tab" tabindex="4">
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;module&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;proxy&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;direct&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;hugoVersion&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;extended&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;min&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;0.73.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;imports&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;path&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;github.com/google/docsy&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;disable&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;path&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;github.com/google/docsy/dependencies&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;disable&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>You can find details of what these configuration settings do in the &lt;a href="https://gohugo.io/hugo-modules/configuration/#module-config-top-level">Hugo modules documentation&lt;/a>.
+Depending on your environment you may need to tweak them slightly, for example by adding a proxy to use when downloading remote modules.&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+In Hugo 0.110.0 the default config base filename was changed to &lt;code>hugo.toml&lt;/code>.
+If you are using hugo 0.110 or above, we recommend renaming your &lt;code>config.toml&lt;/code> to &lt;code>hugo.toml&lt;/code>!
+&lt;/div>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Attention&lt;/h4>
+If you have a multi language installation, please make sure that the section &lt;code>[languages]&lt;/code> inside your &lt;code>hugo.toml&lt;/code> is declared before the section &lt;code>[module]&lt;/code> with the module imports. Otherwise you will run into trouble!
+&lt;/div>
+&lt;h3 id="check-validity-of-your-configuration-settings">Check validity of your configuration settings&lt;a class="td-heading-self-link" href="#check-validity-of-your-configuration-settings" aria-label="Heading self-link">&lt;/a>&lt;/h3>
+&lt;p>To make sure that your configuration settings are correct, run the command &lt;code>hugo mod graph&lt;/code> which prints a module dependency graph:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo mod graph
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo: collected modules in &lt;span class="m">1092&lt;/span> ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">github.com/me/my-existing-site github.com/google/docsy@v0.9.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">github.com/google/docsy@v0.9.1 github.com/twbs/bootstrap@v5.2.3+incompatible
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">github.com/google/docsy@v0.9.1 github.com/FortAwesome/Font-Awesome@ v0.0.0-20230802202706-f0c25837a3fe
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Make sure that three lines with dependencies &lt;code>docsy&lt;/code>, &lt;code>bootstrap&lt;/code> and &lt;code>Font-Awesome&lt;/code> are listed. If not, please double check your config settings.&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+&lt;p>In order to clean up your module cache, issue the command &lt;code>hugo mod clean&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo mod clean
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo: collected modules in &lt;span class="m">995&lt;/span> ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo: cleaned module cache &lt;span class="k">for&lt;/span> &lt;span class="s2">&amp;#34;github.com/FortAwesome/Font-Awesome&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo: cleaned module cache &lt;span class="k">for&lt;/span> &lt;span class="s2">&amp;#34;github.com/google/docsy&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo: cleaned module cache &lt;span class="k">for&lt;/span> &lt;span class="s2">&amp;#34;github.com/twbs/bootstrap&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h2 id="clean-up-your-repository">Clean up your repository&lt;a class="td-heading-self-link" href="#clean-up-your-repository" aria-label="Heading self-link">&lt;/a>&lt;/h2>
+&lt;p>Since your site now uses Hugo Modules, you can remove &lt;code>docsy&lt;/code> from the &lt;code>themes&lt;/code> directory, as instructed below.
+First, change to the root directory of your site:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> /path/to/my-existing-site
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="previous-use-of-docsy-theme-as-git-clone">Previous use of Docsy theme as git clone&lt;a class="td-heading-self-link" href="#previous-use-of-docsy-theme-as-git-clone" aria-label="Heading self-link">&lt;/a>&lt;/h3>
+&lt;p>Simply remove the subdirectory &lt;code>docsy&lt;/code> inside your &lt;code>themes&lt;/code> directory:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">rm -rf themes/docsy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="previous-use-of-docsy-theme-as-git-submodule">Previous use of Docsy theme as git submodule&lt;a class="td-heading-self-link" href="#previous-use-of-docsy-theme-as-git-submodule" aria-label="Heading self-link">&lt;/a>&lt;/h3>
+&lt;p>If your Docsy theme was installed as submodule, use git&amp;rsquo;s &lt;code>rm&lt;/code> subcommand to remove the subdirectory &lt;code>docsy&lt;/code> inside your &lt;code>themes&lt;/code> directory:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git rm -rf themes/docsy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You are now ready to commit your changes to your repository:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git commit -m &lt;span class="s2">&amp;#34;Removed docsy git submodule&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Attention&lt;/h4>
+Be careful when using the &lt;code>rm -rf&lt;/code> command, make sure that you don&amp;rsquo;t inadvertently delete any productive data files!
+&lt;/div></description></item></channel></rss>
